@@ -1,21 +1,7 @@
 // console.log('Hello World');
-// 1. A function that will randomly return either, 'Rock', 'Paper', or 'Scissors'
-// 2. A function that will play a single round of Rock Paper Scissors
-//    - it'll take two parameters, playerSelection and computerSelection
-//    - it'll return a string that declares the winner of the round ex. 'You Lose! Paper beats Rock'
-//    - playerSelection parameter must be case-sensitive
-//    - I want to return the results of this function call
-// 3. A function called game() 
-//    - calls the playRound function inside of it
-//    - plays a 5 round game that keeps score and reports a winner or loser at the end
-//    - use a for loop
-//    - use prompt() to get input from the user
-//    - use console.log() to display the results of each round and the winner at the end
-// *may need to re-work previous functions if I need to; specifically change the return value to something more useful
-// *feel free to create more 'helper' functions
 
 // function playRound(playerSelection, computerSelection) {
-
+    // code
 // }
 
 // const playerSelection = 'rock';
@@ -27,25 +13,34 @@
 // }
 
 function getComputerChoice() {
-    const Array = ['ROCK', 'PAPER', 'SCISSOR'];
-    const randomIndex = Math.floor(Math.random() * Array.length);
-    const compSelection = Array[randomIndex]
-    return compSelection;
+    let Array = ['ROCK', 'PAPER', 'SCISSOR'];
+
+    // 1. A function that will randomly return either, 'Rock', 'Paper', or 'Scissors'
+    let randomIndex = Math.floor(Math.random() * Array.length);
+    let computerSelection = Array[randomIndex];
+    return computerSelection;
 }
 
 
 function getPlayerChoice() {
-    const unformattedPlayerChoice = prompt('Choose ROCK, PAPER, or SCISSOR: ');
-    userSelection = unformattedPlayerChoice.toUpperCase();
-    return userSelection;
+
+    // - playerSelection parameter must be case-sensitive
+    // - use prompt() to get input from the user
+    let unformattedPlayerChoice = prompt('Choose ROCK, PAPER, or SCISSOR: ');
+    let playerSelection = unformattedPlayerChoice.toUpperCase();
+    return playerSelection;
 }
 
 
+// 2. A function that will play a single round of Rock Paper Scissors
 function playRound(playerSelection, computerSelection) {
 
+    // - it'll take two parameters, playerSelection and computerSelection
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
 
+    // - it'll return a string that declares the winner of the round ex. 'You Lose! Paper beats Rock'
+    // - I want to return the results of this function call
     if (playerSelection === 'ROCK') {
 
         if (computerSelection === 'ROCK') {
@@ -93,13 +88,21 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
 let playerScore = 0;
 let computerScore = 0;
 
+// 3. A function called game() 
 function game() {
 
+    // - use a for loop
+    // - plays a 5 round game that keeps score and reports a winner or loser at the end
     for (let i = 0; i < 5; i++) { 
+
+        // - calls the playRound function inside of it
         let roundResult = playRound();
+
+        // - use console.log() to display the results of each round and the winner at the end
         console.log(roundResult);
         if (roundResult === 'computer +1') {
             computerScore += 1;   

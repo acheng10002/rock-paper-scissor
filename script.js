@@ -1,17 +1,16 @@
-
 const buttons = document.querySelectorAll('.button');
 
-let results = document.querySelector('.results');
+let results = document.querySelector('#results');
 
-let playerScore = document.querySelector('.playerScore');
+let playerScore = document.querySelector('#playerScore');
 playerScore.textContent = '0';
 let playerScoreVar = 0;
 
-let computerScore = document.querySelector('.computerScore');
+let computerScore = document.querySelector('#computerScore');
 computerScore.textContent = '0';
 let computerScoreVar = 0;
 
-let whoWins = document.querySelector('.whoWins');
+let whoWins = document.querySelector('#whoWins');
 
 
 function getComputerChoice() {
